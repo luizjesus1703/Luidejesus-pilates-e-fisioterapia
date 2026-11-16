@@ -1,0 +1,895 @@
+<!-- Google Fonts: Plus Jakarta Sans, Inter & Great Vibes (para assinatura elegante do logo) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'sans-serif'],
+                        script: ['Great Vibes', 'cursive'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#F0FDFA',
+                            100: '#CCFBF1',
+                            500: '#14B8A6',
+                            600: '#0D9488',
+                            700: '#0F766E',
+                            800: '#115E59',
+                            900: '#134E4A',
+                        },
+                        sand: '#FAF9F6',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-sand text-slate-800 antialiased selection:bg-brand-100 selection:text-brand-900">
+
+    <!-- Navbar Fixa -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo Oficial Recriada em SVG Transparente (Monograma LJ + Coluna + Tipografia) -->
+                <a href="#inicio" class="flex items-center gap-3 group" aria-label="Lui de Jesus Pilates e Fisioterapia">
+                    <div class="w-12 h-12 rounded-xl bg-brand-50 border border-brand-200/80 flex items-center justify-center shadow-xs group-hover:bg-brand-100/70 transition shrink-0">
+                        <svg viewBox="0 0 100 95" class="w-10 h-10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Curva externa estilizada da coluna à esquerda do L -->
+                            <path d="M29 14C15 32 14 54 22 72" stroke="#0F766E" stroke-width="2.6" stroke-linecap="round"/>
+                            <!-- 6 Pontos das vértebras ao longo da curva -->
+                            <circle cx="30" cy="21" r="2.3" fill="#0D9488"/>
+                            <circle cx="26" cy="29" r="2.4" fill="#0D9488"/>
+                            <circle cx="23.5" cy="38" r="2.5" fill="#0F766E"/>
+                            <circle cx="22.5" cy="47" r="2.5" fill="#0F766E"/>
+                            <circle cx="23.5" cy="56" r="2.4" fill="#0D9488"/>
+                            <circle cx="25.5" cy="64.5" r="2.2" fill="#0D9488"/>
+                            <!-- Letra L manuscrita integrada -->
+                            <path d="M40 16C34 34 27 53 20 68C18 72 21 75 26 72C33 67 43 68 53 74C63 80 73 74 75 61C77 48 79 32 82 18" stroke="#0F766E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <!-- Barra superior do J elegante -->
+                            <path d="M56 20C68 18 82 17 91 20" stroke="#0F766E" stroke-width="3.2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-script text-2xl sm:text-[28px] text-brand-800 leading-none tracking-normal">
+                            Lui de Jesus
+                        </span>
+                        <span class="text-[9.5px] sm:text-[10px] font-heading font-bold text-brand-700 tracking-[0.2em] uppercase mt-0.5">
+                            Pilates e Fisioterapia
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Links Desktop -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                    <a href="#inicio" class="hover:text-brand-700 transition">Início</a>
+                    <a href="#servicos" class="hover:text-brand-700 transition">Tratamentos & Aulas</a>
+                    <a href="#avaliacoes" class="hover:text-brand-700 transition">Avaliações (5.0 ★)</a>
+                    <a href="#contato" class="hover:text-brand-700 transition">Localização & Horários</a>
+                </nav>
+
+                <!-- Botões de Ação -->
+                <div class="flex items-center gap-3">
+                    <a href="tel:+5513997916403" class="hidden lg:flex items-center gap-2 text-sm font-semibold text-slate-700 hover:text-brand-700 px-3 py-2 rounded-lg transition">
+                        <i data-lucide="phone" class="w-4 h-4 text-brand-700"></i>
+                        (13) 99791-6403
+                    </a>
+                    <a href="https://wa.me/5513997916403?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Lui%20de%20Jesus%20Pilates%20e%20Fisioterapia." 
+                       target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold px-4 sm:px-5 py-2.5 rounded-xl shadow-sm hover:shadow transition">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i>
+                        <span>Agendar Avaliação</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative pt-10 pb-16 lg:pt-16 lg:pb-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                
+                <!-- Coluna Texto -->
+                <div class="lg:col-span-7 space-y-6">
+                    <!-- Selo Google 5.0 -->
+                    <div class="inline-flex items-center gap-2.5 bg-white border border-slate-200 px-4 py-2 rounded-full shadow-sm">
+                        <div class="flex items-center text-amber-400">
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        </div>
+                        <span class="text-xs sm:text-sm font-semibold text-slate-800">5.0 Estrelas no Google</span>
+                        <span class="text-slate-300">|</span>
+                        <span class="text-xs sm:text-sm text-slate-600">Jardim Mar e Céu, Guarujá</span>
+                    </div>
+
+                    <h1 class="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-slate-900 leading-tight tracking-tight">
+                        Recupere seus movimentos, alivie dores e fortaleça seu corpo no <span class="text-brand-700">Guarujá</span>.
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
+                        Atendimento completo em <strong>Pilates Clínico e Solo, Fisioterapia Especializada, Estética Dermatofuncional e Terapias Manuais</strong>. Cuidado individualizado no Jardim Mar e Céu.
+                    </p>
+
+                    <!-- CTAs Principais -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                        <a href="https://wa.me/5513997916403?text=Ol%C3%A1!%20Vi%20o%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio%20na%20Lui%20de%20Jesus%20Pilates%20e%20Fisioterapia." 
+                           target="_blank" rel="noopener noreferrer"
+                           class="inline-flex items-center justify-center gap-2.5 bg-brand-700 hover:bg-brand-800 text-white font-semibold px-7 py-4 rounded-xl shadow-lg shadow-brand-700/20 transition text-base">
+                            <i data-lucide="calendar-check" class="w-5 h-5"></i>
+                            Agendar pelo WhatsApp
+                        </a>
+                        <a href="#servicos" 
+                           class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 font-semibold px-7 py-4 rounded-xl transition text-base">
+                            Ver Todos os Tratamentos
+                            <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+
+                    <!-- Mini Info Rápida (Horário Atualizado 07:00 às 20:00) -->
+                    <div class="pt-4 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="clock" class="w-4 h-4 text-brand-700"></i>
+                            <span>Seg a Sex: <strong>07:00 às 20:00</strong></span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-brand-700"></i>
+                            <span>R. Maria Geralda Valadão, 260</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coluna Imagem -->
+                <div class="lg:col-span-5">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-brand-100">
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=900&q=80" 
+                             onerror="this.src='https://placehold.co/800x900/0F766E/FFFFFF?text=Lui+de+Jesus+Pilates+e+Fisioterapia'"
+                             alt="Estúdio de Pilates e Fisioterapia Lui de Jesus no Guarujá" 
+                             class="w-full h-[380px] sm:h-[460px] object-cover">
+                        
+                        <!-- Card Flutuante de Depoimento -->
+                        <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-lg border border-slate-100">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="font-heading font-bold text-sm text-slate-900">Willian De Souza</span>
+                                <span class="text-xs text-amber-500 font-bold">★★★★★</span>
+                            </div>
+                            <p class="text-xs text-slate-600 italic">
+                                "Ótimo lugar, com muita terapia consegui me reabilitar"
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Barra de Autoridade / Diferenciais -->
+    <section class="bg-brand-800 text-white py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="flex items-center gap-4 bg-brand-900/50 p-4 rounded-2xl border border-brand-700/50">
+                    <div class="w-12 h-12 rounded-xl bg-brand-700 flex items-center justify-center shrink-0">
+                        <i data-lucide="user-check" class="w-6 h-6 text-brand-100"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-heading font-bold text-base">Atendimento Individual</h3>
+                        <p class="text-xs text-brand-100/80 mt-0.5">Foco total nas suas necessidades físicas</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4 bg-brand-900/50 p-4 rounded-2xl border border-brand-700/50">
+                    <div class="w-12 h-12 rounded-xl bg-brand-700 flex items-center justify-center shrink-0">
+                        <i data-lucide="heart-pulse" class="w-6 h-6 text-brand-100"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-heading font-bold text-base">Reabilitação Segura</h3>
+                        <p class="text-xs text-brand-100/80 mt-0.5">Fisioterapia baseada em evolução real</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4 bg-brand-900/50 p-4 rounded-2xl border border-brand-700/50">
+                    <div class="w-12 h-12 rounded-xl bg-brand-700 flex items-center justify-center shrink-0">
+                        <i data-lucide="sparkles" class="w-6 h-6 text-brand-100"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-heading font-bold text-base">Aulas Bem Elaboradas</h3>
+                        <p class="text-xs text-brand-100/80 mt-0.5">Treinos dinâmicos, seguros e eficientes</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4 bg-brand-900/50 p-4 rounded-2xl border border-brand-700/50">
+                    <div class="w-12 h-12 rounded-xl bg-brand-700 flex items-center justify-center shrink-0">
+                        <i data-lucide="award" class="w-6 h-6 text-amber-300"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-heading font-bold text-base">Nota 5.0 no Google</h3>
+                        <p class="text-xs text-brand-100/80 mt-0.5">100% de aprovação dos pacientes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Completa de Serviços e Especialidades (Todos os 17 atendimentos organizados) -->
+    <section id="servicos" class="py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="text-brand-700 font-semibold text-sm uppercase tracking-wider">Especialidades & Tratamentos</span>
+                <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900 mt-2">
+                    Cuidado integrado para saúde, reabilitação e bem-estar
+                </h2>
+                <p class="text-slate-600 mt-4 text-base sm:text-lg">
+                    Conheça todas as nossas modalidades de Pilates, Fisioterapia especializada, Estética Dermatofuncional e Terapias Manuais.
+                </p>
+            </div>
+
+            <!-- Filtros Interativos por Categoria -->
+            <div class="flex flex-wrap justify-center gap-2.5 mb-12" role="tablist" aria-label="Categorias de tratamentos">
+                <button type="button" onclick="filtrarServicos('todos', this)" 
+                        class="filter-btn active px-5 py-2.5 rounded-full text-sm font-semibold bg-brand-700 text-white shadow-sm transition cursor-pointer">
+                    Todos os Serviços (17)
+                </button>
+                <button type="button" onclick="filtrarServicos('pilates', this)" 
+                        class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-white text-slate-700 border border-slate-200 hover:border-brand-400 transition cursor-pointer">
+                    Pilates & Movimento
+                </button>
+                <button type="button" onclick="filtrarServicos('fisioterapia', this)" 
+                        class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-white text-slate-700 border border-slate-200 hover:border-brand-400 transition cursor-pointer">
+                    Fisioterapia Especializada
+                </button>
+                <button type="button" onclick="filtrarServicos('estetica', this)" 
+                        class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-white text-slate-700 border border-slate-200 hover:border-brand-400 transition cursor-pointer">
+                    Estética & Dermatofuncional
+                </button>
+                <button type="button" onclick="filtrarServicos('terapias', this)" 
+                        class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-white text-slate-700 border border-slate-200 hover:border-brand-400 transition cursor-pointer">
+                    Terapias Manuais & Bem-Estar
+                </button>
+            </div>
+
+            <!-- Grid de Serviços -->
+            <div id="gridServicos" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- CATEGORIA 1: PILATES & MOVIMENTO -->
+                <div data-category="pilates" class="service-card bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-300 transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-11 h-11 rounded-xl bg-brand-50 text-brand-700 flex items-center justify-center">
+                                <i data-lucide="layers" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-1 rounded-full">Pilates & Movimento</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">Pilates Clínico</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Atendimento individualizado com aparelhos e acessórios para reabilitação, fortalecimento profundo, estabilização da coluna e correção postural.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5513997916403?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20aula%20de%20Pilates%20Cl%C3%ADnico." target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-brand-800">
+                        Agendar Pilates Clínico <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <div data-category="pilates" class="service-card bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-300 transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-11 h-11 rounded-xl bg-brand-50 text-brand-700 flex items-center justify-center">
+                                <i data-lucide="move" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-1 rounded-full">Pilates & Movimento</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">Pilates Solo</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Exercícios no tapete utilizando o peso do próprio corpo, bolas e faixas elásticas para controle respiratório, flexibilidade e tonificação.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5513997916403?text=Ol%C3%A1!%20Tenho%20interesse%20em%20aulas%20de%20Pilates%20Solo." target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-brand-800">
+                        Agendar Pilates Solo <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <div data-category="pilates" class="service-card bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-300 transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-11 h-11 rounded-xl bg-brand-50 text-brand-700 flex items-center justify-center">
+                                <i data-lucide="zap" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-1 rounded-full">Pilates & Movimento</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">Treinamento Funcional</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Exercícios dinâmicos que melhoram equilíbrio, agilidade, coordenação motora e condicionamento físico para as atividades do dia a dia.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5513997916403?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20Treinamento%20Funcional." target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-brand-800">
+                        Consultar horários <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <div data-category="pilates" class="service-card bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-300 transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-11 h-11 rounded-xl bg-brand-50 text-brand-700 flex items-center justify-center">
+                                <i data-lucide="dumbbell" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-1 rounded-full">Pilates & Movimento</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">Musculação Fisioterapêutica</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Fortalecimento muscular supervisionado por fisioterapeuta, ideal para quem busca hipertrofia ou ganho de força com proteção articular total.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5513997916403?text=Ol%C3%A1!%20Tenho%20interesse%20em%20Muscula%C3%A7%C3%A3o%20Fisioterap%C3%AAutica." target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-brand-800">
+                        Agendar avaliação <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- CATEGORIA 2: FISIOTERAPIA ESPECIALIZADA -->
+                <div data-category="fisioterapia" class="service-card bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-300 transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-11 h-11 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center">
+                                <i data-lucide="stethoscope" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-teal-800 bg-teal-50 px-2.5 py-1 rounded-full">Fisioterapia</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">Fisioterapia Ortopédica</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Reabilitação de lesões musculares, entorses, tendinites, hérnias de disco, dores articulares e recuperação pós-operatória.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5513997916403?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20Fisioterapia%20Ortop%C3%A9dica." target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-brand-800">
+                        Agendar sessão <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <div data-category="fisioterapia" class="service-card bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-300 transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-11 h-11 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center">
+                                <i data-lucide="brain" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-teal-800 bg-teal-50 px-2.5 py-1 rounded-full">Fisioterapia</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">Fisioterapia Neurofuncional (Adultos e Crianças)</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Estimulação motora e cognitiva especializada para pacientes adultos e pediátricos, promovendo autonomia, equilíbrio e neuroplasticidade.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5513997916403?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20Fisioterapia%20Neurofuncional." target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-brand-800">
+                        Falar com especialista <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <div data-category="fisioterapia" class="service-card bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-300 transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-11 h-11 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center">
+                                <i data-lucide="heart-handshake" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-teal-800 bg-teal-50 px-2.5 py-1 rounded-full">Fisioterapia</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">Fisioterapia Geriátrica</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Cuidado dedicado à saúde do idoso, com foco em mobilidade articular, prevenção de quedas, força muscular e qualidade de vida.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5513997916403?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20Fisioterapia%20Geri%C3%A1trica." target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-brand-800">
+                        Agendar avaliação <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <div data-category="fisioterapia" class="service-card bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-300 transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-11 h-11 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center">
+                                <i data-lucide="shield-check" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-teal-800 bg-teal-50 px-2.5 py-1 rounded-full">Fisioterapia</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">Fisioterapia Pélvica</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Reabilitação e fortalecimento do assoalho pélvico com atendimento acolhedor e discreto para saúde íntima, gestação e pós-parto.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5513997916403?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20de%20Fisioterapia%20P%C3%A9lvica." target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-brand-800">
+                        Agendar atendimento <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- CATEGORIA 3: ESTÉTICA & DERMATOFUNCIONAL -->
+                <div data-category="estetica" class="service-card bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-300 transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-11 h-11 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center">
+                                <i data-lucide="sparkles" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-full">Dermatofuncional</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">Fisioterapia Dermatofuncional</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Tratamentos estéticos e reparadores baseados em ciência para saúde da pele, pós-operatório estético, cicatrizes e contorno corporal.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5513997916403?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20Fisioterapia%20Dermatofuncional." target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-brand-800">
+                        Agendar avaliação <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <div data-category="estetica" class="service-card bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-300 transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-11 h-11 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center">
+                                <i data-lucide="smile" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-full">Dermatofuncional</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">Limpeza de Pele</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Higienização profunda, remoção de impurezas e renovação celular para deixar a pele saudável, equilibrada e revitalizada.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5513997916403?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20Limpeza%20de%20Pele." target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-brand-800">
+                        Agendar limpeza de pele <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <div data-category="estetica" class="service-card bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-300 transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-11 h-11 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center">
+                                <i data-lucide="sun" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-full">Tecnologia</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">Laserterapia</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Aplicação terapêutica de laser de baixa intensidade com potente ação analgésica, anti-inflamatória e aceleradora da cicatrização tecidual.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5513997916403?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20Laserterapia." target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-brand-800">
+                        Agendar sessão <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <div data-category="estetica" class="service-card bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-300 transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-11 h-11 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center">
+                                <i data-lucide="activity" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-full">Tecnologia</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">Terapia ILIB</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Irradiação intravascular a laser não invasiva que combate radicais livres, melhora a circulação sanguínea, imunidade e vitalidade geral.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5513997916403?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20sess%C3%A3o%20de%20Terapia%20ILIB." target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-brand-800">
+                        Agendar Terapia ILIB <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- CATEGORIA 4: TERAPIAS MANUAIS & BEM-ESTAR -->
+                <div data-category="terapias" class="service-card bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-300 transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-11 h-11 rounded-xl bg-cyan-50 text-cyan-800 flex items-center justify-center">
+                                <i data-lucide="hand" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-cyan-800 bg-cyan-50 px-2.5 py-1 rounded-full">Terapias Manuais</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">Liberação Miofascial</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Técnica manual precisa para desfazer nódulos de tensão, aliviar rigidez muscular e restaurar a mobilidade dos tecidos.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5513997916403?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20Libera%C3%A7%C3%A3o%20Miofascial." target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-brand-800">
+                        Agendar liberação <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <div data-category="terapias" class="service-card bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-300 transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-11 h-11 rounded-xl bg-cyan-50 text-cyan-800 flex items-center justify-center">
+                                <i data-lucide="feather" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-cyan-800 bg-cyan-50 px-2.5 py-1 rounded-full">Terapias Manuais</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">Massagem Relaxante</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Manobras suaves e rítmicas que reduzem o estresse físico e mental, aliviam tensões acumuladas e promovem descanso profundo.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5513997916403?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20Massagem%20Relaxante." target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-brand-800">
+                        Agendar massagem <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <div data-category="terapias" class="service-card bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-300 transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-11 h-11 rounded-xl bg-cyan-50 text-cyan-800 flex items-center justify-center">
+                                <i data-lucide="flame" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-cyan-800 bg-cyan-50 px-2.5 py-1 rounded-full">Terapias Manuais</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">Massagem com Pedras Quentes</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Termoterapia relaxante com pedras aquecidas que penetra profundamente na musculatura, ativando a circulação e aliviando dores crônicas.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5513997916403?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20Massagem%20com%20Pedras%20Quentes." target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-brand-800">
+                        Agendar pedras quentes <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <div data-category="terapias" class="service-card bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-300 transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-11 h-11 rounded-xl bg-cyan-50 text-cyan-800 flex items-center justify-center">
+                                <i data-lucide="circle-dot" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-cyan-800 bg-cyan-50 px-2.5 py-1 rounded-full">Terapias Manuais</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">Ventosaterapia</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Terapia com ventosas para descompressão miofascial, aumento da oxigenação local e recuperação rápida de dores musculares nas costas e ombros.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5513997916403?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20sess%C3%A3o%20de%20Ventosaterapia." target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-brand-800">
+                        Agendar ventosaterapia <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <div data-category="terapias" class="service-card bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-300 transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-11 h-11 rounded-xl bg-cyan-50 text-cyan-800 flex items-center justify-center">
+                                <i data-lucide="compass" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-cyan-800 bg-cyan-50 px-2.5 py-1 rounded-full">Terapias Integrativas</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">Auriculoterapia</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Estimulação de pontos específicos no pavilhão auricular para auxiliar no controle da ansiedade, insônia, dores físicas e equilíbrio orgânico.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5513997916403?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20sess%C3%A3o%20de%20Auriculoterapia." target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-brand-800">
+                        Agendar auriculoterapia <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Avaliações Reais do Google -->
+    <section id="avaliacoes" class="py-16 lg:py-24 bg-white border-y border-slate-200/70">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <div class="inline-flex items-center gap-2 bg-amber-50 text-amber-800 border border-amber-200 px-3.5 py-1.5 rounded-full text-xs font-bold mb-3">
+                        <span>GOOGLE REVIEWS</span>
+                        <span>•</span>
+                        <span>NOTA MÁXIMA 5.0</span>
+                    </div>
+                    <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900">
+                        O que nossos pacientes dizem
+                    </h2>
+                </div>
+                <div class="flex items-center gap-3 bg-sand px-5 py-3 rounded-2xl border border-slate-200">
+                    <div class="text-3xl font-heading font-extrabold text-slate-900">5.0</div>
+                    <div>
+                        <div class="flex text-amber-400">
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-0.5">Avaliações verificadas no Google</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Avaliação 1: Willian De Souza -->
+                <div class="bg-sand p-7 rounded-2xl border border-slate-200/80 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <span class="text-xs font-medium text-slate-400">Google</span>
+                        </div>
+                        <p class="text-slate-700 text-base leading-relaxed mb-6">
+                            "Ótimo lugar, com muita terapia consegui me reabilitar"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-200/70">
+                        <div class="w-10 h-10 rounded-full bg-brand-700 text-white font-bold flex items-center justify-center text-sm">
+                            WS
+                        </div>
+                        <div>
+                            <p class="font-heading font-bold text-sm text-slate-900">Willian De Souza</p>
+                            <p class="text-xs text-slate-500">Paciente verificado</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Avaliação 2: Bruno Benitz -->
+                <div class="bg-sand p-7 rounded-2xl border border-slate-200/80 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <span class="text-xs font-medium text-slate-400">Google</span>
+                        </div>
+                        <p class="text-slate-700 text-base leading-relaxed mb-6">
+                            "Aqui desde a inauguração, excelente"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-200/70">
+                        <div class="w-10 h-10 rounded-full bg-emerald-700 text-white font-bold flex items-center justify-center text-sm">
+                            BB
+                        </div>
+                        <div>
+                            <p class="font-heading font-bold text-sm text-slate-900">Bruno Benitz</p>
+                            <p class="text-xs text-slate-500">Paciente verificado</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Avaliação 3: Luiz Fernando De Jesus -->
+                <div class="bg-sand p-7 rounded-2xl border border-slate-200/80 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <span class="text-xs font-medium text-slate-400">Google</span>
+                        </div>
+                        <p class="text-slate-700 text-base leading-relaxed mb-6">
+                            "Excelente atendimento, ótima equipe de trabalho, aulas muito bem elaboradas, tudo perfeito!!"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-200/70">
+                        <div class="w-10 h-10 rounded-full bg-teal-700 text-white font-bold flex items-center justify-center text-sm">
+                            LJ
+                        </div>
+                        <div>
+                            <p class="font-heading font-bold text-sm text-slate-900">Luiz Fernando De Jesus</p>
+                            <p class="text-xs text-slate-500">Paciente verificado</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Agendamento, Horários e Localização -->
+    <section id="contato" class="py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                
+                <!-- Formulário de Pré-Agendamento (Envia direto para WhatsApp) -->
+                <div class="lg:col-span-6 bg-white p-7 sm:p-10 rounded-3xl border border-slate-200 shadow-sm">
+                    <span class="text-brand-700 font-semibold text-sm uppercase tracking-wider">Agendamento Rápido</span>
+                    <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-slate-900 mt-1 mb-3">
+                        Agende sua sessão ou avaliação
+                    </h2>
+                    <p class="text-slate-600 text-sm mb-6">
+                        Preencha os dados abaixo para iniciar seu atendimento diretamente pelo WhatsApp da clínica.
+                    </p>
+
+                    <form id="whatsappForm" class="space-y-4">
+                        <div>
+                            <label for="nome" class="block text-sm font-medium text-slate-700 mb-1">Seu Nome Completo</label>
+                            <input type="text" id="nome" required placeholder="Ex: Maria Silva"
+                                   class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-600 focus:border-brand-600 outline-none transition text-sm">
+                        </div>
+
+                        <div>
+                            <label for="objetivo" class="block text-sm font-medium text-slate-700 mb-1">Qual especialidade ou atendimento você procura?</label>
+                            <select id="objetivo" 
+                                    class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-600 focus:border-brand-600 outline-none transition text-sm bg-white">
+                                <option value="Avaliação Inicial / Consulta Fisioterapêutica">Avaliação Inicial / Consulta Fisioterapêutica</option>
+                                <option value="Pilates Clínico ou Pilates Solo">Pilates Clínico ou Pilates Solo</option>
+                                <option value="Fisioterapia Ortopédica, Geriátrica ou Pélvica">Fisioterapia Ortopédica, Geriátrica ou Pélvica</option>
+                                <option value="Fisioterapia Neurofuncional (Adulto ou Infantil)">Fisioterapia Neurofuncional (Adulto ou Infantil)</option>
+                                <option value="Musculação Fisioterapêutica ou Treinamento Funcional">Musculação Fisioterapêutica ou Treinamento Funcional</option>
+                                <option value="Dermatofuncional, Limpeza de Pele, Laser ou ILIB">Dermatofuncional, Limpeza de Pele, Laser ou ILIB</option>
+                                <option value="Massagens, Pedras Quentes, Ventosa ou Liberação Miofascial">Massagens, Pedras Quentes, Ventosa ou Liberação Miofascial</option>
+                                <option value="Auriculoterapia">Auriculoterapia</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="periodo" class="block text-sm font-medium text-slate-700 mb-1">Melhor período (Seg a Sex, 07h às 20h)</label>
+                            <select id="periodo" 
+                                    class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-600 focus:border-brand-600 outline-none transition text-sm bg-white">
+                                <option value="Período da Manhã (07:00 - 12:00)">Período da Manhã (07:00 - 12:00)</option>
+                                <option value="Período da Tarde (12:00 - 17:00)">Período da Tarde (12:00 - 17:00)</option>
+                                <option value="Final da Tarde / Noite (17:00 - 20:00)">Final da Tarde / Noite (17:00 - 20:00)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="mensagem" class="block text-sm font-medium text-slate-700 mb-1">Observação (Opcional)</label>
+                            <textarea id="mensagem" rows="3" placeholder="Conte brevemente seu objetivo, dor específica ou recomendação médica..."
+                                      class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-600 focus:border-brand-600 outline-none transition text-sm"></textarea>
+                        </div>
+
+                        <button type="submit" 
+                                class="w-full inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-4 px-6 rounded-xl shadow-md transition text-base cursor-pointer">
+                            <i data-lucide="send" class="w-5 h-5"></i>
+                            Continuar no WhatsApp
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Informações da Clínica & Mapa -->
+                <div class="lg:col-span-6 space-y-6">
+                    <!-- Card Endereço e Horários -->
+                    <div class="bg-white p-7 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-11 h-11 rounded-xl bg-brand-50 text-brand-700 flex items-center justify-center shrink-0 mt-0.5">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-heading font-bold text-lg text-slate-900">Onde Estamos</h3>
+                                <p class="text-slate-600 text-sm mt-1">
+                                    R. Maria Geralda Valadão, 260 - Jardim Mar e Céu<br>
+                                    Guarujá - SP, CEP 11443-070
+                                </p>
+                                <a href="https://www.google.com/maps/search/?api=1&query=R.+Maria+Geralda+Valad%C3%A3o,+260+-+Jardim+Mar+e+Ceu,+Guaruj%C3%A1+-+SP,+11443-070" 
+                                   target="_blank" rel="noopener noreferrer"
+                                   class="inline-flex items-center gap-1 text-xs font-semibold text-brand-700 hover:underline mt-2">
+                                    Abrir rotas no Google Maps <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 pt-4 border-t border-slate-100">
+                            <div class="w-11 h-11 rounded-xl bg-brand-50 text-brand-700 flex items-center justify-center shrink-0 mt-0.5">
+                                <i data-lucide="phone-call" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-heading font-bold text-lg text-slate-900">Telefone & WhatsApp</h3>
+                                <a href="tel:+5513997916403" class="text-slate-700 hover:text-brand-700 font-semibold text-base block mt-1">
+                                    (13) 99791-6403
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 pt-4 border-t border-slate-100">
+                            <div class="w-11 h-11 rounded-xl bg-brand-50 text-brand-700 flex items-center justify-center shrink-0 mt-0.5">
+                                <i data-lucide="clock" class="w-5 h-5"></i>
+                            </div>
+                            <div class="w-full">
+                                <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">Horário de Funcionamento</h3>
+                                <ul class="text-sm space-y-1.5 text-slate-600">
+                                    <li class="flex justify-between"><span>Segunda-feira</span><span class="font-semibold text-slate-900">07:00 – 20:00</span></li>
+                                    <li class="flex justify-between"><span>Terça-feira</span><span class="font-semibold text-slate-900">07:00 – 20:00</span></li>
+                                    <li class="flex justify-between"><span>Quarta-feira</span><span class="font-semibold text-slate-900">07:00 – 20:00</span></li>
+                                    <li class="flex justify-between"><span>Quinta-feira</span><span class="font-semibold text-slate-900">07:00 – 20:00</span></li>
+                                    <li class="flex justify-between"><span>Sexta-feira</span><span class="font-semibold text-slate-900">07:00 – 20:00</span></li>
+                                    <li class="flex justify-between text-slate-400"><span>Sábado e Domingo</span><span>Fechado</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mapa Incorporado -->
+                    <div class="rounded-3xl overflow-hidden border border-slate-200 shadow-sm h-56 bg-slate-100">
+                        <iframe 
+                            title="Mapa Lui de Jesus Pilates e Fisioterapia"
+                            src="https://maps.google.com/maps?q=R.%20Maria%20Geralda%20Valad%C3%A3o,%20260%20-%20Jardim%20Mar%20e%20Ceu,%20Guaruj%C3%A1%20-%20SP&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 pb-8 border-b border-slate-800">
+                <div class="flex items-center gap-3.5 text-center md:text-left">
+                    <div class="w-12 h-12 rounded-xl bg-brand-900/80 border border-brand-700/60 flex items-center justify-center shrink-0">
+                        <svg viewBox="0 0 100 95" class="w-9 h-9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M29 14C15 32 14 54 22 72" stroke="#5EEAD4" stroke-width="2.6" stroke-linecap="round"/>
+                            <circle cx="30" cy="21" r="2.3" fill="#2DD4BF"/>
+                            <circle cx="26" cy="29" r="2.4" fill="#2DD4BF"/>
+                            <circle cx="23.5" cy="38" r="2.5" fill="#5EEAD4"/>
+                            <circle cx="22.5" cy="47" r="2.5" fill="#5EEAD4"/>
+                            <circle cx="23.5" cy="56" r="2.4" fill="#2DD4BF"/>
+                            <circle cx="25.5" cy="64.5" r="2.2" fill="#2DD4BF"/>
+                            <path d="M40 16C34 34 27 53 20 68C18 72 21 75 26 72C33 67 43 68 53 74C63 80 73 74 75 61C77 48 79 32 82 18" stroke="#5EEAD4" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M56 20C68 18 82 17 91 20" stroke="#5EEAD4" stroke-width="3.2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="font-script text-3xl text-white block leading-none">Lui de Jesus</span>
+                        <span class="text-[10px] font-heading font-bold tracking-[0.2em] uppercase text-brand-400 block mt-1">Pilates e Fisioterapia</span>
+                        <span class="text-xs text-slate-400 mt-1.5 block">R. Maria Geralda Valadão, 260 - Jardim Mar e Céu, Guarujá - SP</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap justify-center gap-6 text-sm">
+                    <a href="#inicio" class="hover:text-white transition">Início</a>
+                    <a href="#servicos" class="hover:text-white transition">Serviços</a>
+                    <a href="#avaliacoes" class="hover:text-white transition">Avaliações</a>
+                    <a href="#contato" class="hover:text-white transition">Contato</a>
+                </div>
+            </div>
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+                <p>&copy; 2026 Lui de Jesus Pilates e Fisioterapia. Todos os direitos reservados.</p>
+                <p>Seg a Sex: 07:00 – 20:00 • Tel / WhatsApp: (13) 99791-6403</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Flutuante do WhatsApp -->
+    <a href="https://wa.me/5513997916403?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20Pilates%20e%20Fisioterapia." 
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Falar no WhatsApp"
+       class="fixed bottom-6 right-6 z-50 bg-emerald-600 hover:bg-emerald-700 text-white p-4 rounded-full shadow-xl hover:scale-105 transition flex items-center justify-center">
+        <i data-lucide="message-circle" class="w-7 h-7"></i>
+    </a>
+
+    <!-- Scripts de Interatividade -->
+    <script>
+        // Inicializar ícones Lucide
+        lucide.createIcons();
+
+        // Filtro interativo de serviços por categoria
+        function filtrarServicos(categoria, botaoClicado) {
+            const cards = document.querySelectorAll('.service-card');
+            const botoes = document.querySelectorAll('.filter-btn');
+
+            botoes.forEach(btn => {
+                btn.classList.remove('bg-brand-700', 'text-white', 'shadow-sm');
+                btn.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+            });
+
+            botaoClicado.classList.remove('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+            botaoClicado.classList.add('bg-brand-700', 'text-white', 'shadow-sm');
+
+            cards.forEach(card => {
+                if (categoria === 'todos' || card.dataset.category === categoria) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
